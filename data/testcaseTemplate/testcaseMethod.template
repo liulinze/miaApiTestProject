@@ -1,0 +1,12 @@
+    def test${testcase}(self,input=None):
+        u"""${testcaseName}"""
+        start=datetime.datetime.now()
+        resultProcess=resultApi.resultDefine()
+        authenticatedPara=authenticationFunction.authentication()
+        if "${cleanCartMark}"=="Y":
+            authenticatedPara.cleanCart()
+        else:
+            pass
+        ${testOrder}
+        end=datetime.datetime.now()
+        print ("case time:"+str((end-start).microseconds/1000000.0))

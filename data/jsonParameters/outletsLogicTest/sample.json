@@ -1,0 +1,97 @@
+[
+    {
+    "TestcaseMethodName": "示例用例1",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1056879","item_size": "SINGLE","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"99","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"9","assertThirdLevelName":"None"}
+                        ],
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "示例用例2",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1143977","item_size": "42g*3罐","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ]
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"90","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedAuthsession":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"9","assertThirdLevelName":"None"}
+                        ],
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    }
+]

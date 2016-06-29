@@ -1,0 +1,18 @@
+        if input==None:
+            paras=${paras}
+        else:
+            paras=${paras}
+            paras["${outputPara}"]=input["${outputPara}"]
+        if "${authentication}"=="Y":
+            paras=authenticatedPara.CreateEntryDic(paras,open(self.authsessionParaPath).read())
+        else:
+            pass
+        result = requests.${requestMethod}(self.url("${url}","${path}"),paras)
+        result = resultProcess.jsonTextApi(result)
+        #print(result)
+        if "${outputPara}"!="N":
+            input={"${outputPara}":result["content"]["${outputPara}"]}
+        else:
+            input=None
+        logging.info("当前接口访问的结果是："+str(result))
+        ${testAssert}

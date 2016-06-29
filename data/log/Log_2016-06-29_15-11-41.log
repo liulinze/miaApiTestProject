@@ -1,0 +1,24 @@
+Jun 29 2016 15:11:41-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 15:11:41-connectionpool.py-[line:387]-DEBUG:"POST /account/Login/ HTTP/1.1" 200 None
+Jun 29 2016 15:11:41-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 15:11:41-connectionpool.py-[line:387]-DEBUG:"POST /cart/info/ HTTP/1.1" 200 None
+Jun 29 2016 15:11:41-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 15:11:41-connectionpool.py-[line:387]-DEBUG:"POST /topcart/add HTTP/1.1" 200 None
+Jun 29 2016 15:11:41-Testcase_sample.py-[line:48]-INFO:当前接口访问的结果是：{'alert': '操作成功!', 'content': 1, 'msg': '', 'code': 200}
+Jun 29 2016 15:11:41-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): ckapi.mia.com
+Jun 29 2016 15:11:41-connectionpool.py-[line:387]-DEBUG:"POST /cksrv/order/checkout HTTP/1.1" 200 None
+Jun 29 2016 15:11:41-Testcase_sample.py-[line:92]-INFO:当前接口访问的结果是：{'alert': '查询成功', 'content': {'type': 'official', 'total_balance': 0, 'lock_balance': 0, 'show_invoice_desc': '', 'may_invoice': False, 'checkout_item': [{'sub_content': {'has_hongkong_warehouse': 0, 'sub_total_qty': 1, 'title': '第三方商家', 'sub_pay_price': 99}, 'sub_item': [{'size': 'SINGLE', 'pic': 'http://img04.miyabaobei.com/d1/p1/item/10/1056/1056879_normal_1.jpg', 'is_gift': '0', 'warehouse_name': '', 'sale_price': '99.00', 'item_time': 1467184314, 'name': '双心 Doppel herz （虚拟跨境够商品416）山楂花防心肌心绞痛90粒 红', 'market_price': '167.00', 'quantity': 1, 'item_id': '1056879', 'is_spu': '0'}]}], 'default_address': {'id': '1813582', 'name': '刘琳泽', 'prov_id': '1', 'address': '测试地址', 'town_id': '42998', 'town': '三环以内', 'area_id': '4443', 'prov': '北京市', 'area': '朝阳区', 'mobile': '15801191182', 'city_id': '456', 'city': '北京市', 'phone': ''}, 'other_address': [{'id': '1813582', 'name': '刘琳泽', 'prov_id': '1', 'address': '测试地址', 'town_id': '42998', 'town': '三环以内', 'area_id': '4443', 'prov': '北京市', 'area': '朝阳区', 'mobile': '15801191182', 'city_id': '456', 'city': '北京市', 'phone': ''}], 'mia_tips': '', 'cart_total': {'coupon_text': '使用代金券', 'coupon_code': '', 'redbag_id': '', 'total_promotion_reduce': 0, 'freight_price': 0, 'sale_price': 99, 'redbag_text': '使用红包', 'quantity': 1, 'total_market_price': 167, 'pay_price': 99, 'reduce_price': 0, 'redbag_spec': '', 'thrift_price': 68, 'coupon_spec': '', 'freight_spec': ''}, 'promote_image': '', 'top_tips': ''}, 'request_id': '201606291511544803d972dce6451de83715980cbc3dfa', 'code': 200}
+Jun 29 2016 15:11:41-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): ckapi.mia.com
+Jun 29 2016 15:11:41-connectionpool.py-[line:387]-DEBUG:"POST /cksrv/order/create HTTP/1.1" 200 None
+Jun 29 2016 15:11:41-Testcase_sample.py-[line:161]-INFO:当前接口访问的结果是：{'alert': '订单处理中', 'content': {'alert': '请求已提交,请耐心等待', 'polling_interval': 1500, 'polling_amount': 15, 'ck_superior_order_code': '2016062942382171005058124', 'result': '0'}, 'request_id': '201606291511546578acabb24309d8131659fed6d50a1a', 'code': 200}
+Jun 29 2016 15:11:41-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 15:11:42-connectionpool.py-[line:387]-DEBUG:"POST /cart/info/ HTTP/1.1" 200 None
+Jun 29 2016 15:11:42-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 15:11:42-connectionpool.py-[line:387]-DEBUG:"POST /topcart/add HTTP/1.1" 200 None
+Jun 29 2016 15:11:42-Testcase_sample.py-[line:271]-INFO:当前接口访问的结果是：{'alert': '商品暂时缺货', 'content': '', 'msg': '商品暂时缺货', 'code': 600}
+Jun 29 2016 15:11:42-Testcase_sample.py-[line:282]-INFO:结果与期望不一致，当前结果是：600
+Jun 29 2016 15:11:42-mailApi.py-[line:16]-DEBUG:The Name of last file: C:/Users/Test/Desktop/workspace/auto4.0.1/data/report\Report_2016-06-29_15-11-41.html
+Jun 29 2016 15:11:42-mailFunction.py-[line:11]-DEBUG:Current email set: {'Username': 'rinzer', 'Connect': 'smtp.yeah.net', 'Sender': 'rinzer@yeah.net', 'Receiver': 'liulinze@mia.com', 'SmtpServer': 'smtp.yeah.net', 'SubjectStr': '订单系统接口特卖逻辑自动化测试报告', 'Password': 'liulinze1987.'}
+Jun 29 2016 15:11:42-mailFunction.py-[line:20]-INFO:The email set succeed.
+Jun 29 2016 15:11:43-mailFunction.py-[line:35]-DEBUG:服务器连接成功！
+Jun 29 2016 15:11:43-mailFunction.py-[line:38]-INFO:邮件发送成功！

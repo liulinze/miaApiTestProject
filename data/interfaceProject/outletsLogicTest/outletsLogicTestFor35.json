@@ -1,0 +1,697 @@
+[
+    {
+    "TestcaseMethodName": "35-1有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku仅存在于有效未开始特卖中---703",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1104550","item_size": "176*128*50mm","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"703","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-2有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku仅存在于有效已开始特卖中---下单成功",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1109650","item_size": "100ml","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"89","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-3有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku仅存在于有效已结束特卖中---703",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1018542","item_size": "SINGLE","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"703","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-4有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku仅存在于无效未开始特卖中---结果未知",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1109644","item_size": "30片","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"32","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-5有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku仅存在于无效已开始特卖中---结果未知",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1109647","item_size": "150ml","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"98","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-6有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku仅存在于无效已结束特卖中---结果未知",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1111516","item_size": "100","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"49","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-7有效可单独售卖的有库存且仓库属于3、5的特卖商品---sku未加入任何特卖中---703",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1109653","item_size": "100ml","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"703","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-8有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku仅存在于有效未开始特卖中---下单成功",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1056204","item_size": "SINGLE","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"129","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-9有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku仅存在于有效已开始特卖中---下单成功",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1028594","item_size": "SINGLE","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"159","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-10有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku仅存在于有效已结束特卖中---下单成功",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1004514","item_size": "75*75cm淡粉","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"62","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-11有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku仅存在于无效未开始特卖中---结果未知",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1059097","item_size": "SINGLE","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"129","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-12有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku仅存在于无效已开始特卖中---结果未知",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1059568","item_size": "73cm","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"49","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-13有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku仅存在于无效已结束特卖中---结果未知",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1051782","item_size": "SINGLE","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"189","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    },
+    {
+    "TestcaseMethodName": "35-14有效可单独售卖的有库存且仓库属于3、5的非特卖商品---sku未加入任何特卖中---下单成功",
+    "isNeedCleanCart": "Y",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/topcart/add",
+                "requestParas":{"item_id": "1059760","item_size": "800g","quantity": "1"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/checkout",
+                "requestParas":{"params": '{"ck_type": "1","user_id": "4238217","channel": "4","sub_channel": "4.1.0|","ip": "127.0.0.1","from": "4","client_version": "4_1_0"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"},
+                               {"assertExpect":"98","assertResult":"pay_price","assertGrade":"3","assertThirdLevelName":"cart_total"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"2",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/create",
+                "requestParas":{"params":'{"ck_type": "1","user_id": "4238217","address_id":"1813582","channel":"4","sub_channel":"4.1.0|","ip": "127.0.0.1","pay_mode":"3","dst_mode":"1","from":"4"}',"version":"3_0"},
+                "resultJudge":[{"assertExpect":"200","assertResult":"code","assertGrade":"1","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"N",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"N",
+                "isNeedCycle":"N"
+            },
+            {
+                "BaseUrlNum":"3",
+                "requestMethod":"post",
+                "requestInterfaceName":"/order/result",
+                "requestParas":{"ck_superior_order_code":"None","user_id":"4238217"},
+                "resultJudge":[{"assertExpect":"True","assertResult":"result","assertGrade":"0","assertThirdLevelName":"None"}
+                        ],
+                "isNeedInput":"Y",
+                "isNeedOutput":"ck_superior_order_code",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":{"paraWant":"result","judegValue":"2","stopNum":"15"}
+            }
+        ]
+    }
+]

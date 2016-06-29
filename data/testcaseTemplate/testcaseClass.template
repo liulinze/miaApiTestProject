@@ -1,0 +1,27 @@
+#coding: utf-8
+        
+"""
+功能：待执行的接口测试用例
+用法：通过框架自动触发调用
+"""
+    
+import unittest,requests,datetime,sys,os,json,logging
+from Application import resultApi
+from config import Config
+from Core import authenticationFunction
+
+class ${className}(unittest.TestCase):
+    u"""待测试用例集：${interfaceName}"""
+    def setUp(self):
+        self.authsessionParaPath=Config.autoFrameworkPathSetDic["authsessionParaPath"]
+            
+    def tearDown(self):
+        pass
+            
+    ${model}
+        
+    def url(self,url,path):
+        return url+path
+        
+if __name__=="__main__":
+    unittest.main()

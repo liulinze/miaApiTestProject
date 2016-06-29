@@ -1,0 +1,17 @@
+Jun 28 2016 15:25:53-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 28 2016 15:25:53-connectionpool.py-[line:387]-DEBUG:"POST /account/Login/ HTTP/1.1" 200 None
+Jun 28 2016 15:25:53-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 28 2016 15:25:53-connectionpool.py-[line:387]-DEBUG:"POST /cart/info/ HTTP/1.1" 200 None
+Jun 28 2016 15:25:53-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 28 2016 15:25:53-connectionpool.py-[line:387]-DEBUG:"POST /topcart/add HTTP/1.1" 500 None
+Jun 28 2016 15:25:53-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 28 2016 15:25:53-connectionpool.py-[line:387]-DEBUG:"POST /cart/info/ HTTP/1.1" 200 None
+Jun 28 2016 15:25:53-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 28 2016 15:25:53-connectionpool.py-[line:387]-DEBUG:"POST /topcart/add HTTP/1.1" 200 None
+Jun 28 2016 15:25:53-Testcase_sample.py-[line:279]-INFO:当前接口访问的结果是：{'code': 600, 'msg': '商品暂时缺货', 'alert': '商品暂时缺货', 'content': ''}
+Jun 28 2016 15:25:53-Testcase_sample.py-[line:290]-INFO:结果与期望不一致，当前结果是：600
+Jun 28 2016 15:25:53-mailApi.py-[line:35]-DEBUG:The Name of last file: C:/Users/Test/Desktop/workspace/auto4.0.1/data/Report\Report_2016-06-28_15-25-53.html
+Jun 28 2016 15:25:53-mailFunction.py-[line:11]-DEBUG:Current email set: {'SmtpServer': 'smtp.yeah.net', 'SubjectStr': '订单系统接口特卖逻辑自动化测试报告', 'Password': 'liulinze1987.', 'Sender': 'rinzer@yeah.net', 'Receiver': 'liulinze@mia.com', 'Username': 'rinzer', 'Connect': 'smtp.yeah.net'}
+Jun 28 2016 15:25:53-mailFunction.py-[line:20]-INFO:The email set succeed.
+Jun 28 2016 15:25:54-mailFunction.py-[line:35]-DEBUG:服务器连接成功！
+Jun 28 2016 15:25:55-mailFunction.py-[line:38]-INFO:邮件发送成功！

@@ -1,0 +1,7 @@
+Jun 29 2016 13:17:38-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 13:17:38-connectionpool.py-[line:387]-DEBUG:"POST /account/Login/ HTTP/1.1" 200 None
+Jun 29 2016 13:17:38-mailApi.py-[line:35]-DEBUG:The Name of last file: C:/Users/Test/Desktop/workspace/auto4.0.1/data/Report\Report_2016-06-29_13-17-38.html
+Jun 29 2016 13:17:38-mailFunction.py-[line:11]-DEBUG:Current email set: {'Sender': 'rinzer@yeah.net', 'SmtpServer': 'smtp.yeah.net', 'Password': 'liulinze1987.', 'Receiver': 'liulinze@mia.com', 'Connect': 'smtp.yeah.net', 'SubjectStr': '订单系统接口特卖逻辑自动化测试报告', 'Username': 'rinzer'}
+Jun 29 2016 13:17:38-mailFunction.py-[line:20]-INFO:The email set succeed.
+Jun 29 2016 13:17:40-mailFunction.py-[line:35]-DEBUG:服务器连接成功！
+Jun 29 2016 13:17:40-mailFunction.py-[line:38]-INFO:邮件发送成功！

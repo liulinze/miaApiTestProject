@@ -1,0 +1,19 @@
+[
+    {
+    "TestcaseMethodName": "item_info",
+    "isNeedCleanCart": "N",
+    "TestOrder": [
+            {
+                "BaseUrlNum":"1",
+                "requestMethod":"post",
+                "requestInterfaceName":"/item/info/",
+                "requestParas":{"id": "1165998"},
+                "resultJudge":"200",
+                "isNeedInput":"N",
+                "isNeedOutput":"N",
+                "isNeedAuthsession":"Y",
+                "isNeedCycle":"N"
+            }
+        ]
+    }
+]

@@ -1,0 +1,27 @@
+        if input==None:
+            paras=${paras}
+        else:
+            paras=${paras}
+            paras["${outputPara}"]=input["${outputPara}"]
+        if "${authentication}"=="Y":
+            paras=authenticatedPara.CreateEntryDic(paras,open(self.authsessionParaPath).read())
+        else:
+            pass
+        requestMethod="${requestMethod}"
+        requestURL=self.url("${url}","${path}")
+        requestParas=paras
+        cycleParas=${cycleParas}
+        try:
+            paraWant=cycleParas["paraWant"]
+        except Exception as e:
+            paraWant="result"
+        try:
+            judegValue=cycleParas["judegValue"]
+        except Exception as e:
+            judegValue="2"
+        try:
+            stopNum=cycleParas["stopNum"]
+        except Exception as e:
+            stopNum="15"
+        cycleResult=authenticatedPara.cycleRequest(requestMethod,requestURL,requestParas,paraWant,judgeValue,stopNum)
+        ${testAssert}

@@ -1,0 +1,24 @@
+        caseJudgeValue=${caseJudgeValue}
+        #判断断言字段在结果中所处等级，进而决定进入哪个分支
+        if caseJudgeValue["assertGrade"]==9 or caseJudgeValue["assertGrade"]=="9":
+            if str(cycleResult)!=str(caseJudgeValue["assertExpect"]):
+                logging.info("结果与期望不一致，当前结果是："+str(cycleResult))
+            self.failUnless(str(cycleResult)==str(caseJudgeValue["assertExpect"]),
+                            "结果与期望不一致，当前结果是："+str(cycleResult))
+        elif caseJudgeValue["assertGrade"]==1 or caseJudgeValue["assertGrade"]=="1":
+            if str(result[caseJudgeValue["assertResult"]])!=str(caseJudgeValue["assertExpect"]):
+                logging.info("结果与期望不一致，当前结果是："+str(result[caseJudgeValue["assertResult"]]))
+            self.failUnless(str(result[caseJudgeValue["assertResult"]])==str(caseJudgeValue["assertExpect"]),
+                            "结果与期望不一致，当前结果是："+str(result[caseJudgeValue["assertResult"]]))
+        elif caseJudgeValue["assertGrade"]==2 or caseJudgeValue["assertGrade"]=="2":
+            if str(result["content"][caseJudgeValue["assertResult"]])!=str(caseJudgeValue["assertExpect"]):
+                logging.info("结果与期望不一致，当前结果是："+str(result["content"][caseJudgeValue["assertResult"]]))
+            self.failUnless(str(result["content"][caseJudgeValue["assertResult"]])==str(caseJudgeValue["assertExpect"]),
+                            "结果与期望不一致，当前结果是："+str(result["content"][caseJudgeValue["assertResult"]]))
+        elif caseJudgeValue["assertGrade"]==3 or caseJudgeValue["assertGrade"]=="3":
+            if str(result["content"][caseJudgeValue["assertThirdLevelName"]][caseJudgeValue["assertResult"]])!=str(caseJudgeValue["assertExpect"]):
+                logging.info("结果与期望不一致，当前结果是："+str(result["content"][caseJudgeValue["assertThirdLevelName"]][caseJudgeValue["assertResult"]]))
+            self.failUnless(str(result["content"][caseJudgeValue["assertThirdLevelName"]][caseJudgeValue["assertResult"]])==str(caseJudgeValue["assertExpect"]),
+                            "结果与期望不一致，当前结果是："+str(result["content"][caseJudgeValue["assertThirdLevelName"]][caseJudgeValue["assertResult"]]))
+        else:
+            pass

@@ -1,0 +1,24 @@
+Jun 29 2016 14:33:21-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 14:33:21-connectionpool.py-[line:387]-DEBUG:"POST /account/Login/ HTTP/1.1" 200 None
+Jun 29 2016 14:33:21-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 14:33:21-connectionpool.py-[line:387]-DEBUG:"POST /cart/info/ HTTP/1.1" 200 None
+Jun 29 2016 14:33:21-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 14:33:22-connectionpool.py-[line:387]-DEBUG:"POST /topcart/add HTTP/1.1" 200 None
+Jun 29 2016 14:33:22-Testcase_sample.py-[line:48]-INFO:当前接口访问的结果是：{'content': 1, 'alert': '操作成功!', 'msg': '', 'code': 200}
+Jun 29 2016 14:33:22-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): ckapi.mia.com
+Jun 29 2016 14:33:22-connectionpool.py-[line:387]-DEBUG:"POST /cksrv/order/checkout HTTP/1.1" 200 None
+Jun 29 2016 14:33:22-Testcase_sample.py-[line:92]-INFO:当前接口访问的结果是：{'content': {'may_invoice': False, 'type': 'official', 'default_address': {'prov_id': '1', 'area_id': '4443', 'town': '三环以内', 'city': '北京市', 'prov': '北京市', 'name': '刘琳泽', 'area': '朝阳区', 'mobile': '15801191182', 'town_id': '42998', 'phone': '', 'id': '1813582', 'city_id': '456', 'address': '测试地址'}, 'total_balance': 0, 'show_invoice_desc': '', 'cart_total': {'reduce_price': 0, 'redbag_text': '使用红包', 'coupon_code': '', 'sale_price': 99, 'redbag_id': '', 'total_market_price': 167, 'total_promotion_reduce': 0, 'freight_spec': '', 'quantity': 1, 'thrift_price': 68, 'redbag_spec': '', 'coupon_text': '使用代金券', 'pay_price': 99, 'coupon_spec': '', 'freight_price': 0}, 'promote_image': '', 'mia_tips': '', 'other_address': [{'prov_id': '1', 'area_id': '4443', 'town': '三环以内', 'city': '北京市', 'prov': '北京市', 'name': '刘琳泽', 'area': '朝阳区', 'mobile': '15801191182', 'town_id': '42998', 'phone': '', 'id': '1813582', 'city_id': '456', 'address': '测试地址'}], 'top_tips': '', 'lock_balance': 0, 'checkout_item': [{'sub_content': {'title': '第三方商家', 'sub_pay_price': 99, 'sub_total_qty': 1, 'has_hongkong_warehouse': 0}, 'sub_item': [{'item_id': '1056879', 'sale_price': '99.00', 'is_spu': '0', 'size': 'SINGLE', 'is_gift': '0', 'quantity': 1, 'item_time': 1467182015, 'name': '双心 Doppel herz （虚拟跨境够商品416）山楂花防心肌心绞痛90粒 红', 'pic': 'http://img01.miyabaobei.com/d1/p1/item/10/1056/1056879_normal_1.jpg', 'warehouse_name': '', 'market_price': '167.00'}]}]}, 'alert': '查询成功', 'request_id': '201606291433354a71098d408c3053455a7aa7042937b8', 'code': 200}
+Jun 29 2016 14:33:22-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): ckapi.mia.com
+Jun 29 2016 14:33:22-connectionpool.py-[line:387]-DEBUG:"POST /cksrv/order/create HTTP/1.1" 200 None
+Jun 29 2016 14:33:22-Testcase_sample.py-[line:161]-INFO:当前接口访问的结果是：{'content': {'polling_amount': 15, 'alert': '请求已提交,请耐心等待', 'ck_superior_order_code': '2016062942382171005031353', 'result': '0', 'polling_interval': 1500}, 'alert': '订单处理中', 'request_id': '20160629143335e8e9036a2e7bcbbc3d8a422acc9eb064', 'code': 200}
+Jun 29 2016 14:33:22-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 14:33:22-connectionpool.py-[line:387]-DEBUG:"POST /cart/info/ HTTP/1.1" 200 None
+Jun 29 2016 14:33:22-connectionpool.py-[line:207]-INFO:Starting new HTTP connection (1): api.miyabaobei.com
+Jun 29 2016 14:33:22-connectionpool.py-[line:387]-DEBUG:"POST /topcart/add HTTP/1.1" 200 None
+Jun 29 2016 14:33:22-Testcase_sample.py-[line:271]-INFO:当前接口访问的结果是：{'content': '', 'alert': '商品暂时缺货', 'msg': '商品暂时缺货', 'code': 600}
+Jun 29 2016 14:33:22-Testcase_sample.py-[line:282]-INFO:结果与期望不一致，当前结果是：600
+Jun 29 2016 14:33:22-mailApi.py-[line:16]-DEBUG:The Name of last file: C:/Users/Test/Desktop/workspace/auto4.0.1/data/report\Report_2016-06-29_14-33-21.html
+Jun 29 2016 14:33:22-mailFunction.py-[line:11]-DEBUG:Current email set: {'Connect': 'smtp.yeah.net', 'Sender': 'rinzer@yeah.net', 'Username': 'rinzer', 'Receiver': 'liulinze@mia.com', 'SubjectStr': '订单系统接口特卖逻辑自动化测试报告', 'Password': 'liulinze1987.', 'SmtpServer': 'smtp.yeah.net'}
+Jun 29 2016 14:33:22-mailFunction.py-[line:20]-INFO:The email set succeed.
+Jun 29 2016 14:33:23-mailFunction.py-[line:35]-DEBUG:服务器连接成功！
+Jun 29 2016 14:33:24-mailFunction.py-[line:38]-INFO:邮件发送成功！
